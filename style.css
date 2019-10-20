@@ -1,0 +1,331 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.top-nav{
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: transparent;
+	font-family: 'Open Sans Condensed', sans-serif;
+	transition: all ease 0.5s;
+}
+
+.top-nav-modified{
+	transition: all ease 0.5s;
+	padding: 25px 10px;
+	background-color: #FFFFFF;
+
+}
+
+.logo-modified{
+	color: #2C2C2C;
+}
+
+
+
+
+.logo{
+	color: #F4F4F4;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 25px;
+}
+.nav-links{
+	/* flex, space-around and width all are essential in making
+	the nav bar ul items display the way they are */
+	display: flex;
+	justify-content: space-around;
+	width: 35%;
+}
+
+.nav-links li{
+
+	list-style: none;/*gets rid of the bullet points*/
+}
+
+
+.nav-links a{
+	color: #F4F4F4;
+	text-decoration: none;
+	letter-spacing: 1.5px;
+	font-weight: bold;
+	font-size: 17px;
+	transition: all 0.7s ease;
+}
+
+.nav-links a:hover{
+	border-radius: 40px;
+	border-style: solid;
+	border-color: #6D6D6D;
+	padding: 5px;
+	color: #6D6D6D;
+}
+
+.burger-icon{
+	display: none;
+	cursor: pointer;
+}
+
+.burger-icon div{
+	width: 25px;
+	height:3px;
+	background-color: #F4F4F4;
+	margin:5px;
+	transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 1000px){/*after the window is resized to a certain amount
+	it will increase width between ul items so they don't look too squished*/
+	.nav-links{
+		width: 55%;
+	}
+}
+
+
+@media screen and (max-width: 768px){
+	body{
+		overflow-x: hidden; /*this prevents the x coord scroll bar from appearing*/
+	}
+	.top-nav{
+	transition: all ease 0.5s;
+	padding: 25px 10px;
+	background-color: #FFFFFF;
+
+	}
+	.nav-links{
+		position: absolute;
+		left: 0px;
+		height: 92vh;
+		top: 8vh;
+		background-color: #FFFFFF;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%; /*add someway to blur the background*/
+		height: 170px;
+		transform: translateX(100%);/*this will push the ul items off the screen*/
+		transition: transform 0.5s ease-in;
+	}	
+	.logo{
+	color: black;
+	}
+	.burger-icon div{
+	background-color: black;
+}
+	.nav-links li{
+		opacity: 0;
+	}
+	.nav-links a{
+		color: black;
+	}
+	.burger-icon{
+		display: block;
+	}
+
+
+}
+
+.nav-active{
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{	
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px, 6px);
+
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*------------- Under Nav Bar---------------*/
+
+#home{
+	height: 100vh;
+	background: linear-gradient(#B5B5B5,#F3F3F3);
+
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#home .user-box{
+	opacity: 0.9;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	text-align: center;
+}
+
+.user-box img{
+	transition: all 1.5s ease;
+}
+
+.hello-text{
+	opacity: 0;
+	position: absolute;
+	top:65%;
+	font-family: 'Lora', serif;
+	color: #949494;
+	text-transform: uppercase;
+	font-size: 60px;
+	letter-spacing: 15px;
+	transition: all 1.5s ease;
+}
+
+.random-text{
+	font-size: 12px;
+	opacity: 0;
+	transition: all 1.5s ease;
+	position: absolute;
+	top: 90%;
+}
+
+/**--------------ABOUT INFO----------------------**/
+
+main{
+	font-family: 'Raleway', sans-serif;
+	line-height: 50px;
+	font-size: 20px;
+	margin:auto;
+  max-width: 90%;
+  text-align: justify;
+  width: 75%;
+  border: 1px solid gray;
+  padding: 2em;
+  text-align: justify;
+}
+
+main p{
+		line-height: 35px;
+		font-size: 19px;
+		color: #0D0D0D;
+}
+
+.my_work{
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	padding: 10px;
+	text-align: center;
+}
+
+
+
+
+.work-grid{
+	display: grid;
+
+	overflow: hidden;
+	max-width: 90%;
+	margin: auto;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));/**this awesome code will automatically proportion grid to screen size**/
+	grid-auto-rows: 330px;
+	grid-gap: 60px;
+	margin-bottom: 100px;
+
+}
+
+.work-grid a{
+	font-family: 'Raleway', sans-serif;
+	color: black;
+	font-size: 25px;
+	text-decoration: none;
+	text-align: center;
+
+	
+}
+.work-item{
+		position: relative;
+}
+.work-item img{
+	overflow:hidden;
+	transition: transform 0.5s ease;
+}
+.work-item img:hover{
+	transform: scale(1.2);
+	filter: brightness(40%);
+}
+.work-item img:hover ~ h3{
+	opacity: 1;
+	transform: translateY(50px);
+}
+
+.work-item h3{
+	transition: transform 0.5s ease;
+	color: white;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	left: 20%;
+	bottom: 60%;
+}
+
+/**
+.work-item{
+	list-style: none;
+	overflow: hidden;
+	position: relative;
+}
+
+.work-item h3{
+	position: absolute;
+	text-align: center;
+	z-index: 50;
+
+}
+
+.work-image-text{
+	height:100%;
+
+}
+.work-image-text h3{
+	
+	position: absolute;
+	left: 20%;
+	color: #C2C2C2;
+}
+
+.work-image{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+}
+
+.imageToDim{
+	transition: transform 0.5s ease;
+}
+
+.imageToDim:hover{
+	transform: scale(1.2);
+	filter: brightness(40%);
+}
+**/
